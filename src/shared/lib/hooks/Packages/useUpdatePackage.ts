@@ -14,6 +14,9 @@ interface IData {
   price?: string;
   type?: "Express" | "Standard";
   paymentMethod?: string;
+  width?: number;
+  length?: number;
+  height?: number;
 }
 
 export async function useUpdatePackage(
