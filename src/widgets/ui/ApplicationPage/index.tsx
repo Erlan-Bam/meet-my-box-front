@@ -416,12 +416,28 @@ export const ApplicationPage = () => {
           <Tab
             label="Рассчитать"
             onClick={() => (window.location.href = "/calculate")}
+            disabled={!receiverAddressId || !senderAddressId} // Disable based on condition
           />
-          <Tab label="Адреса" />
-          <Tab label="Содержимое" />
-          <Tab label="Страхование" />
-          <Tab label="Вызов курьера" />
-          <Tab label="Итог" />
+          <Tab
+            label="Адреса"
+            disabled={!receiverAddressId || !senderAddressId} // Disable based on condition
+          />
+          <Tab
+            label="Содержимое"
+            disabled={!receiverAddressId || !senderAddressId} // Disable based on condition
+          />
+          <Tab
+            label="Страхование"
+            disabled={!receiverAddressId || !senderAddressId} // Disable based on condition
+          />
+          <Tab
+            label="Вызов курьера"
+            disabled={!receiverAddressId || !senderAddressId} // Disable based on condition
+          />
+          <Tab
+            label="Итог"
+            disabled={!receiverAddressId || !senderAddressId} // Disable based on condition
+          />
         </Tabs>
       </div>
 
@@ -473,7 +489,7 @@ export const ApplicationPage = () => {
             </option>
             {addresses?.map((address) => (
               <option key={address.id} value={address.id}>
-                {`${address.city}, Здание ${address.housing}, Кв. ${address.apartment}, Дом ${address.building}`}
+                {`${address.postalCode},  ${address.city}, Улица ${address.street} ${address.housing}, Кв. ${address.apartment}, Дом ${address.building}`}
               </option>
             ))}
           </select>
@@ -514,7 +530,7 @@ export const ApplicationPage = () => {
             >
               <DialogTitle>Детали содержимого</DialogTitle>
               {packageCurrent.items === undefined ? (
-                <div className="ml-4">Содержимое вашей посылки пусто</div>
+                <div className="ml-4  mb-4">Содержимое вашей посылки пусто</div>
               ) : (
                 <DialogContent>
                   <Table>

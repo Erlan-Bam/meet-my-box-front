@@ -6,7 +6,6 @@ import {
 import { useGetBlock } from "@shared/lib/hooks/useGetBlock";
 import { ContactLink } from "@shared/ui/Link/Contact/contact-link";
 import { Paragraph } from "@shared/ui/Paragraph/ui/paragraph";
-import { Loader } from "@widgets/ui/Loader/ui/loader";
 import parse from "html-react-parser";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
@@ -29,10 +28,6 @@ export const ContactScreen = () => {
 
     fetchBlock();
   }, []);
-
-  if (isLoading) {
-    return <Loader />;
-  }
 
   return (
     <>
@@ -59,6 +54,7 @@ export const ContactScreen = () => {
               alt="form_img"
               // width={400}
               // height={400}
+              loading="lazy"
               className="mt-4 w-full mb-8"
               width={512}
               height={256}
@@ -85,6 +81,7 @@ export const ContactScreen = () => {
             <img
               src={contact_img.src}
               alt="form_img"
+              loading="lazy"
               // width={400}
               // height={400}
               className={`${styles.contact_pc__img}`}
