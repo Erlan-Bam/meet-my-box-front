@@ -152,7 +152,12 @@ export const CalculateForm = () => {
       localStorage.setItem("rates", JSON.stringify(response));
       localStorage.setItem(
         "dimensionsData",
-        JSON.stringify({ width: width, height: height, length: length })
+        JSON.stringify({
+          width: width,
+          height: height,
+          length: length,
+          width: width,
+        })
       );
       window.location.href = `/rates`;
     } else {

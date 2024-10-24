@@ -311,6 +311,7 @@ export const ApplicationPage = () => {
         width: dimensionsData.width,
         height: dimensionsData.height,
         length: dimensionsData.length,
+        weight: dimensionsData.weight,
       });
 
       localStorage.removeItem("dimensionsData");
