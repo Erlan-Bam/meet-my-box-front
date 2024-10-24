@@ -156,7 +156,7 @@ export const CalculateForm = () => {
           width: width,
           height: height,
           length: length,
-          width: width,
+          weight: weight,
         })
       );
       window.location.href = `/rates`;

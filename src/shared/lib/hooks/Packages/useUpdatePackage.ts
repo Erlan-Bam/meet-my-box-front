@@ -17,6 +17,7 @@ interface IData {
   width?: number;
   length?: number;
   height?: number;
+  weight?: number;
 }
 
 export async function useUpdatePackage(
